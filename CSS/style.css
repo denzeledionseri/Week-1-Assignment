@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body, html {
+    font-family: 'Kdam Thmor Pro', sans-serif;
+    background-color: black;
+}
+
+.body-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.header a {
+    float: left;
+    text-decoration-line: none;
+    color: white;
+    font-size: 36px;
+    padding: 1em;
+    margin-top: 2em;
+    align-items: center;
+}
+
+.header-right a, button {
+    float: right;
+    align-items: center;
+    display: flex;
+    gap: 1em;
+    padding: 1rem;
+    background-color: yellow;
+    color: black;
+    border-radius: 15px;
+}
+
+
+.header-left a:hover {
+    text-decoration: underline;
+    background-color: black;
+}
+
+.grid-container {
+    text-align: center;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-areas:
+    'ROW-1'
+    'kick-1'
+    'kick-2'
+    'kick-3'
+    'kick-4'
+    'ROW-2'
+    'shirt-1'
+    'shirt-2'
+    'shirt-3'
+    'shirt-4';
+    gap: 1em;
+    font-size: 1em;
+    margin: 0 3em;
+}
+
+.ROW-1, .ROW-2 {
+    grid-area: ROW-1;
+    text-align: left;
+    margin: 1em 0;
+}
+
+.kick-1{
+    grid-area: kick-1;
+}
+
+.kick-2 {
+    grid-area: kick-2;
+}
+
+.kick-3 {
+    grid-area: kick-3;
+}
+
+.kick-4 {
+    grid-area: kick-4;
+}
+
+.ROW-2 {
+    grid-area: ROW-2;
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+.shirt-1{
+    grid-area: shirt-1;
+}
+
+.shirt-2 {
+    grid-area: shirt-2;
+}
+
+.shirt-3 {
+    grid-area: shirt-3;
+}
+
+.shirt-4 {
+    grid-area: shirt-4;
+}
+
+.movie-1, .movie-2, .movie-3, .movie-4, .shirt-1, .shirt-2, .shirt-3, .shirt-4 {
+    border: 2px solid black;
+    border-radius: 2em;
+    font-size: .9em;
+}
+
+.grid-container img {
+    padding: .7em;
+    width: 100%;
+}
+
+.grid-container a {
+    text-decoration-line: none;
+    color: white;
+}
+
+.grid-container a:hover {
+    text-decoration: underline;
+}
+
+.grid-container a:hover ~ a, .grid-container img:hover {
+    filter: brightness(70%);
+}
+
+.footer {
+    color: white;
+    text-align: center;
+    padding: 10px;
+    padding-top: 0px;
+    margin: 0;
+    font-size: .9em;
+}
+
+.footer hr {
+    border: 1px solid white;
+}
+
+.footer button {
+    border: none;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+/* on screens that are 600px or more */
+@media only screen and (min-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas:
+        'ROW-1 ROW-1'
+        'kick-1 kick-2'
+        'kick-3 kick-4'
+        'ROW-2 ROW-2'
+        'shirt-1 shirt-2'
+        'shirt-3 shirt-4';
+    }
+}
+
+/* on screens that are 992px or more */
+@media only screen and (min-width: 992px) {
+    .grid-container {
+        grid-template-columns: repeat(4, 25%);
+        grid-template-areas:
+        'ROW-1 ROW-1 ROW-1 ROW-1'
+        'kick-1 kick-2 kick-3 kick-4'
+        'ROW-2 ROW-2 ROW-2 ROW-2'
+        'shirt-1 shirt-2 shirt-3 shirt-4';
+    }
+}
